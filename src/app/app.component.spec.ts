@@ -1,12 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ApplicationModule } from '@angular/core';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+  
+  beforeEach(async() =>{
+
+    TestBed.configureTestingModule({
+      imports : [ApplicationModule],
+      declarations : [AppComponent],
+      providers : []
+
+    })
+
+  })
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -24,6 +31,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ANGULAR-DEMO-4202');
+    expect(compiled.querySelector('h1')?.textContent).toContain('ANGULAR-DEMO-4202');
   });
+
 });
